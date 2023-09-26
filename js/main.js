@@ -3,17 +3,15 @@ document.getElementById("btn1").addEventListener("click", btnClicked1);
 document.getElementById("btn2").addEventListener("click", btnClicked2);
 document.getElementById("btn3").addEventListener("click", btnClicked3);
 document.getElementById("btn4").addEventListener("click", btnClicked4);
+document.getElementById("btn5").addEventListener("click", btnClicked5);
 
 // arrays
-let list1 = [1, 2, 3, "flowers", "genuine", "Maynards"];
-let list2 = [1, 2, 3, "flowers", "genuine", "Maynards"];
-let nums1 = [];
-let nums2 = [];
+let list = [1, 2, 3, "flowers", "genuine", "Maynards"];
 
 function btnClicked1() {
     let testItem = prompt("test this item");
 
-    if (myIncludes(list1, testItem)) {
+    if (myIncludes(list, testItem)) {
         console.log("its in the array");
     } else {
         console.log("it not in aray");
@@ -32,7 +30,7 @@ function myIncludes(array, item) {
 
 function btnClicked2() {
     let testItem = prompt("test this item");
-    let index = myIndexOf(list2, testItem);
+    let index = myIndexOf(list, testItem);
 
     if (index === -1) {
         console.log("it not in aray");
@@ -54,11 +52,11 @@ function myIndexOf(array, item) {
 }
 
 function btnClicked3() {
-    nums1 = [];
+    let nums1 = [];
     let digits = +prompt("how many numbers are in the array?");
 
     for (let i = 0; i < digits; i++) {
-        let newNum = +prompt(`what is your number at array position ${i}?`)
+        let newItem = +prompt(`what is your number at array position ${i}?`)
         nums1.push(newNum);
     }
 
@@ -79,7 +77,7 @@ function average(array) {
 }
 
 function btnClicked4() {
-    nums2 = [];
+    let nums2 = [];
     let digits = +prompt("how many numbers are in the array?");
 
     for (let i = 0; i < digits; i++) {
@@ -101,4 +99,18 @@ function myMax(array) {
     }
     
     return max;
+}
+
+function btnClicked5() {
+    let list2 = [];
+    let list2Size = +prompt("how many items are in the array?");
+
+    for (let i = 0; i < digits; i++) {
+        let newItem = prompt(`what is your number at array position ${i}?`)
+        nums2.push(newItem);
+    }
+}
+
+function count(array) {
+
 }
