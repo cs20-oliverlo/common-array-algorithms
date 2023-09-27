@@ -1,49 +1,23 @@
-// Button Event Listener
-document.getElementById("btn1").addEventListener("click", btnClicked1);
-document.getElementById("btn2").addEventListener("click", btnClicked2);
-document.getElementById("btn3").addEventListener("click", btnClicked3);
-document.getElementById("btn4").addEventListener("click", btnClicked4);
-document.getElementById("btn5").addEventListener("click", btnClicked5);
-
 // arrays
 let list = [1, 2, 3, "flowers", "genuine", "Maynards"];
+let list2 = [4, 6, -7, 9, 10]; 
+let list3 = [1, 1, 1, 2, 2, 3, 3, 3, 3, 4, "grass", "grass", "lancaster"];
+let newArray = [];
 
-function btnClicked1() {
-    let testItem = prompt("test this item");
-
-    if (myIncludes(list, testItem)) {
-        console.log("its in the array");
-    } else {
-        console.log("it not in aray");
-    }
-}
-
-function myIncludes(array, item) {
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] == item) {
-            return true;
-        } else if (array[i] === item) {
+// Functions
+function myIncludes(item) {
+    for (let i = 0; i < list.length; i++) {
+        if (list[i] === item) {
             return true;
         }
     }
 }
 
-function btnClicked2() {
-    let testItem = prompt("test this item");
-    let index = myIndexOf(list, testItem);
-
-    if (index === -1) {
-        console.log("it not in aray");
-    } else {
-        console.log(`in the array at index ${index}`);
-    }
-}
-
-function myIndexOf(array, item) {
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] == item) {
+function myIndexOf(item) {
+    for (let i = 0; i < list.length; i++) {
+        if (list[i] == item) {
             return i;
-        } else if (array[i] === item) {
+        } else if (list[i] === item) {
             return i;
         }
     }
@@ -51,66 +25,47 @@ function myIndexOf(array, item) {
     return -1;
 }
 
-function btnClicked3() {
-    let nums1 = [];
-    let digits = +prompt("how many numbers are in the array?");
+function average() {
+    let avg = 0;
 
-    for (let i = 0; i < digits; i++) {
-        let newItem = +prompt(`what is your number at array position ${i}?`)
-        nums1.push(newNum);
+    for (let i = 0; i < list2.length; i++) {
+        avg += list2[i];
     }
 
-    console.log(nums1);
-    console.log(average(nums1));
+    avg = avg/list2.length;
+
+    return avg;;
 }
 
-function average(array) {
-    let total = 0;
+function myMax() {
+    let max = list2[0];
 
-    for (let i = 0; i < array.length; i++) {
-        total += array[i];
-    }
-
-    total = total/array.length;
-
-    return total;
-}
-
-function btnClicked4() {
-    let nums2 = [];
-    let digits = +prompt("how many numbers are in the array?");
-
-    for (let i = 0; i < digits; i++) {
-        let newNum = +prompt(`what is your number at array position ${i}?`)
-        nums2.push(newNum);
-    }
-
-    console.log(nums2);
-    console.log(myMax(nums2));
-}
-
-function myMax(array) {
-    let max = array[0];
-
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] > max) {
-            max = array[i]
+    for (let i = 0; i < list2.length; i++) {
+        if (list2[i] > max) {
+            max = list2[i]
         }
     }
     
     return max;
 }
 
-function btnClicked5() {
-    let list2 = [];
-    let list2Size = +prompt("how many items are in the array?");
+function count(item) {
+    let num = 0;
 
-    for (let i = 0; i < digits; i++) {
-        let newItem = prompt(`what is your number at array position ${i}?`)
-        nums2.push(newItem);
+    for (let i = 0; i < list3.length; i++) {
+        if (list3[i] === item) {
+            num++;
+        }
     }
+
+    return num;
 }
 
-function count(array) {
+function swap(array, index1, index2) {
+    newArray = array;
 
+    newArray[index2] = array.slice[index1, index1 + 1];
+    newArray[index1] = array.slice[index2, index2 + 1];
+
+    return newArray;
 }
