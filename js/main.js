@@ -1,23 +1,23 @@
 // arrays
-let list = [1, 2, 3, "flowers", "genuine", "Maynards"];
+let list1 = [1, 2, 3, "flowers", "genuine", "Maynards"];
 let list2 = [4, 6, -7, 9, 10]; 
 let list3 = [1, 1, 1, 2, 2, 3, 3, 3, 3, 4, "grass", "grass", "lancaster"];
 let newArray = [];
 
 // Functions
 function myIncludes(item) {
-    for (let i = 0; i < list.length; i++) {
-        if (list[i] === item) {
+    for (let i = 0; i < list1.length; i++) {
+        if (list1[i] === item) {
             return true;
         }
     }
 }
 
 function myIndexOf(item) {
-    for (let i = 0; i < list.length; i++) {
-        if (list[i] == item) {
+    for (let i = 0; i < list1.length; i++) {
+        if (list1[i] == item) {
             return i;
-        } else if (list[i] === item) {
+        } else if (list1[i] === item) {
             return i;
         }
     }
@@ -62,10 +62,10 @@ function count(item) {
 }
 
 function swap(array, index1, index2) {
-    newArray = array;
+    newArray = array.slice();
 
-    newArray[index2] = array.slice[index1, index1 + 1];
-    newArray[index1] = array.slice[index2, index2 + 1];
+    newArray[index1] = array.slice(index2, index2 + 1);
+    newArray[index2] = array.slice(index1, index1 + 1);
 
     return newArray;
 }
