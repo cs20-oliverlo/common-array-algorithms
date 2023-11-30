@@ -64,8 +64,8 @@ function count(item) {
 function swap(array, index1, index2) {
     newArray = array.slice();
 
-    newArray[index1] = array.slice(index2, index2 + 1);
-    newArray[index2] = array.slice(index1, index1 + 1);
+    newArray[index1] = array[index2];
+    newArray[index2] = array[index1];
 
     return newArray;
 }
